@@ -22,7 +22,6 @@ public class GirlAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(rising);
 		Vector3 playerPos=player.transform.position;
 		playerPos.y=transform.position.y;
 		//if the girl is in a certain distance to the player, then she will attempt to attack, otherwise she will move towards the player
