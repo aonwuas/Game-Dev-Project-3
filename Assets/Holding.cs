@@ -42,6 +42,7 @@ public class Holding : MonoBehaviour {
 			currentPowerUp=objectToPick;
 			objectToPick=null;
 			canPickUp=false;
+			currentPowerUp.transform.localEulerAngles=Vector3.zero;
 			powerRb=currentPowerUp.GetComponent<Rigidbody>();
 			if(powerRb!=null){
 				 powerRb.detectCollisions = false;
