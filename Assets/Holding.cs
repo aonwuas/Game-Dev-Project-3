@@ -7,6 +7,8 @@ public class Holding : MonoBehaviour {
 	private GameObject holder;
 	[SerializeField]
 	private float knockbackFactor;
+	[SerializeField]
+	private int health=3;
 	private GameObject currentPowerUp;
 	private Vector3 knockback;
 	private Rigidbody rb;
@@ -23,6 +25,9 @@ public class Holding : MonoBehaviour {
 			currentPowerUp.transform.parent=null;
 			currentPowerUp=null;
 		}
+		if(health<=0){
+			Debug.Log("you died, rip");
+		}
 		
 	}
 
@@ -36,6 +41,7 @@ public class Holding : MonoBehaviour {
 		if(col.gameObject.tag=="Hand"){
 			knockback=transform.position-col.gameObject.transform.position;
 			knockback.y=0;
+			health--;
 			if(knockback==Vector3.zero){
 				knockback.x=1;
 			}
