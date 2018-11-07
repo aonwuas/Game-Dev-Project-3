@@ -13,6 +13,8 @@ public class Holding : MonoBehaviour {
 	private Vector3 knockback;
 	private Rigidbody rb;
 	private Rigidbody powerRb;
+	private bool canPickUp=false;
+	private GameObject objectToPick;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,7 @@ public class Holding : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if(currentPowerUp!=null){
 			currentPowerUp.transform.position=holder.transform.position;
 		}
@@ -33,6 +36,18 @@ public class Holding : MonoBehaviour {
 			}
 			currentPowerUp=null;
 		}
+		else if(Input.GetKeyDown(KeyCode.E)&&canPickUp){
+			objectToPick.transform.position=holder.transform.position;
+			objectToPick.transform.parent=transform;
+			currentPowerUp=objectToPick;
+			objectToPick=null;
+			canPickUp=false;
+			powerRb=currentPowerUp.GetComponent<Rigidbody>();
+			if(powerRb!=null){
+				 powerRb.detectCollisions = false;
+			}
+
+		}
 		if(health<=0){
 			Debug.Log("you died, rip");
 		}
@@ -42,13 +57,8 @@ public class Holding : MonoBehaviour {
 	void OnCollisionEnter(Collision col)
 	{
 		if(col.gameObject.tag=="Cherry"&&currentPowerUp==null){
-			col.gameObject.transform.position=holder.transform.position;
-			col.gameObject.transform.parent=transform;
-			currentPowerUp=col.gameObject;
-			powerRb=currentPowerUp.GetComponent<Rigidbody>();
-			if(powerRb!=null){
-				 powerRb.detectCollisions = false;
-			}
+			canPickUp=true;
+			objectToPick=col.gameObject;
 		}
 		if(col.gameObject.tag=="Hand"){
 			knockback=transform.position-col.gameObject.transform.position;
@@ -61,5 +71,14 @@ public class Holding : MonoBehaviour {
 			rb.AddForce(knockback*knockbackFactor);
 		}
 		
+	}
+	void OnCollisionExit(Collision col)
+	{
+		if(col.gameObject.tag=="Cherry"){
+			canPickUp=false;
+			if(objectToPick!=null){
+				objectToPick=null;
+			}
+		}
 	}
 }
