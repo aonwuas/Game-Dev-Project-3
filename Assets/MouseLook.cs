@@ -23,8 +23,8 @@ public class MouseLook : MonoBehaviour {
     void Update()
     {
 		//Used https://answers.unity.com/questions/600577/camera-rotation-around-player-while-following.html as a reference
-        offset = Quaternion.AngleAxis (Input.GetAxis("Mouse X") * hSpeed, Vector3.up) * offset;
-		offset = Quaternion.AngleAxis (-Input.GetAxis("Mouse Y") * vSpeed, Vector3.right) * offset;
+        offset = Quaternion.AngleAxis (-Input.GetAxis("Mouse X") * hSpeed, Vector3.up) * offset;
+		offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * vSpeed, Vector3.right) * offset;
 		transform.position = player.position + offset;
 		//this bounds y to between minY and maxY
 		transform.position=new Vector3(transform.position.x,Mathf.Clamp(transform.position.y,minY,maxY),transform.position.z); 
