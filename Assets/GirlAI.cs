@@ -9,10 +9,13 @@ public class GirlAI : MonoBehaviour {
 	private float speed;
 	[SerializeField]
 	private float smashSpeed;
+	[SerializeField]
+	private float stickyWait=2f;
 	private float beginY;
 	private bool falling=false;
 	private Rigidbody rb;
 	private bool rising=false;
+	private bool notStuck=true;
 
 	// Use this for initialization
 	void Start () {
@@ -35,11 +38,11 @@ public class GirlAI : MonoBehaviour {
 			transform.position=Vector3.MoveTowards(transform.position,playerPos,speed*Time.deltaTime);
 		}
 		else{
-			if(transform.position.y<beginY){
+			if(transform.position.y<beginY&&notStuck){
 				transform.position=new Vector3(transform.position.x,transform.position.y+speed*Time.deltaTime,transform.position.z);
 				rb.velocity=Vector3.zero;
 			}
-			else{
+			else if(notStuck){
 				rising=false;
 			}
 		}
@@ -47,15 +50,17 @@ public class GirlAI : MonoBehaviour {
 		
 	}
 	void OnCollisionEnter(Collision col){
-	if(col.gameObject.layer==LayerMask.NameToLayer("Ground")){
-		//just checking collision with different layers, change to what ever layer the hazards for the girl are and update the girl's health
-	}
-	else{
-		//do something different??
+	if(col.gameObject.tag=="Goop"){
+		//if the girl's hand collides with a goopy thing, then she will wait to rise
+		notStuck=false;
+		StartCoroutine("waitToRise",stickyWait);
 	}
 		falling=false;
 		rising=true;
-		//transform.position=new Vector3(transform.position.x,beginY,transform.position.z);
 		rb.velocity=Vector3.zero;
+	}
+	private IEnumerator waitToRise(float waitTime){
+		yield return new WaitForSeconds(waitTime);
+		notStuck=true;
 	}
 }

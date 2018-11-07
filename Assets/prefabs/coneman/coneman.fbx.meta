@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 9ad7abc437ae73849966d931e6ea0ceb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group
+    100004: Head
+    100006: Head 1
+    100008: Hips
+    100010: Hips 1
+    100012: LeftArm
+    100014: LeftArm 1
+    100016: LeftFoot
+    100018: LeftFoot 1
+    100020: LeftForeArm
+    100022: LeftForeArm 1
+    100024: LeftHand
+    100026: LeftHand 1
+    100028: LeftLeg
+    100030: LeftLeg 1
+    100032: LeftShoulder
+    100034: LeftShoulder 1
+    100036: LeftToeBase
+    100038: LeftToeBase 1
+    100040: LeftUpLeg
+    100042: LeftUpLeg 1
+    100044: Neck
+    100046: Neck 1
+    100048: pCone1
+    100050: pCube1
+    100052: pCube2
+    100054: pCube3
+    100056: pCylinder1
+    100058: pSphere1
+    100060: pSphere2
+    100062: QuickRigCharacter_Guides
+    100064: QuickRigCharacter_Guides1
+    100066: QuickRigCharacter_Head
+    100068: QuickRigCharacter_Hips
+    100070: QuickRigCharacter_LeftArm
+    100072: QuickRigCharacter_LeftFoot
+    100074: QuickRigCharacter_LeftForeArm
+    100076: QuickRigCharacter_LeftHand
+    100078: QuickRigCharacter_LeftLeg
+    100080: QuickRigCharacter_LeftShoulder
+    100082: QuickRigCharacter_LeftToeBase
+    100084: QuickRigCharacter_LeftUpLeg
+    100086: QuickRigCharacter_Neck
+    100088: QuickRigCharacter_Reference
+    100090: QuickRigCharacter_RightArm
+    100092: QuickRigCharacter_RightFoot
+    100094: QuickRigCharacter_RightForeArm
+    100096: QuickRigCharacter_RightHand
+    100098: QuickRigCharacter_RightLeg
+    100100: QuickRigCharacter_RightShoulder
+    100102: QuickRigCharacter_RightToeBase
+    100104: QuickRigCharacter_RightUpLeg
+    100106: QuickRigCharacter_Spine
+    100108: QuickRigCharacter_Spine1
+    100110: QuickRigCharacter_Spine2
+    100112: Reference
+    100114: Reference 1
+    100116: RightArm
+    100118: RightArm 1
+    100120: RightFoot
+    100122: RightFoot 1
+    100124: RightForeArm
+    100126: RightForeArm 1
+    100128: RightHand
+    100130: RightHand 1
+    100132: RightLeg
+    100134: RightLeg 1
+    100136: RightShoulder
+    100138: RightShoulder 1
+    100140: RightToeBase
+    100142: RightToeBase 1
+    100144: RightUpLeg
+    100146: RightUpLeg 1
+    100148: Spine
+    100150: Spine 1
+    100152: Spine1
+    100154: Spine1 1
+    100156: Spine2
+    100158: Spine2 1
+    400000: //RootNode
+    400002: group
+    400004: Head
+    400006: Head 1
+    400008: Hips
+    400010: Hips 1
+    400012: LeftArm
+    400014: LeftArm 1
+    400016: LeftFoot
+    400018: LeftFoot 1
+    400020: LeftForeArm
+    400022: LeftForeArm 1
+    400024: LeftHand
+    400026: LeftHand 1
+    400028: LeftLeg
+    400030: LeftLeg 1
+    400032: LeftShoulder
+    400034: LeftShoulder 1
+    400036: LeftToeBase
+    400038: LeftToeBase 1
+    400040: LeftUpLeg
+    400042: LeftUpLeg 1
+    400044: Neck
+    400046: Neck 1
+    400048: pCone1
+    400050: pCube1
+    400052: pCube2
+    400054: pCube3
+    400056: pCylinder1
+    400058: pSphere1
+    400060: pSphere2
+    400062: QuickRigCharacter_Guides
+    400064: QuickRigCharacter_Guides1
+    400066: QuickRigCharacter_Head
+    400068: QuickRigCharacter_Hips
+    400070: QuickRigCharacter_LeftArm
+    400072: QuickRigCharacter_LeftFoot
+    400074: QuickRigCharacter_LeftForeArm
+    400076: QuickRigCharacter_LeftHand
+    400078: QuickRigCharacter_LeftLeg
+    400080: QuickRigCharacter_LeftShoulder
+    400082: QuickRigCharacter_LeftToeBase
+    400084: QuickRigCharacter_LeftUpLeg
+    400086: QuickRigCharacter_Neck
+    400088: QuickRigCharacter_Reference
+    400090: QuickRigCharacter_RightArm
+    400092: QuickRigCharacter_RightFoot
+    400094: QuickRigCharacter_RightForeArm
+    400096: QuickRigCharacter_RightHand
+    400098: QuickRigCharacter_RightLeg
+    400100: QuickRigCharacter_RightShoulder
+    400102: QuickRigCharacter_RightToeBase
+    400104: QuickRigCharacter_RightUpLeg
+    400106: QuickRigCharacter_Spine
+    400108: QuickRigCharacter_Spine1
+    400110: QuickRigCharacter_Spine2
+    400112: Reference
+    400114: Reference 1
+    400116: RightArm
+    400118: RightArm 1
+    400120: RightFoot
+    400122: RightFoot 1
+    400124: RightForeArm
+    400126: RightForeArm 1
+    400128: RightHand
+    400130: RightHand 1
+    400132: RightLeg
+    400134: RightLeg 1
+    400136: RightShoulder
+    400138: RightShoulder 1
+    400140: RightToeBase
+    400142: RightToeBase 1
+    400144: RightUpLeg
+    400146: RightUpLeg 1
+    400148: Spine
+    400150: Spine 1
+    400152: Spine1
+    400154: Spine1 1
+    400156: Spine2
+    400158: Spine2 1
+    2100000: lambert1
+    2300000: pCone1
+    2300002: pCube1
+    2300004: pCube2
+    2300006: pCube3
+    2300008: pCylinder1
+    2300010: pSphere1
+    2300012: pSphere2
+    3300000: pCone1
+    3300002: pCube1
+    3300004: pCube2
+    3300006: pCube3
+    3300008: pCylinder1
+    3300010: pSphere1
+    3300012: pSphere2
+    4300000: pCylinder1
+    4300002: pSphere1
+    4300004: pSphere2
+    4300006: pCone1
+    4300008: pCube1
+    4300010: pCube2
+    4300012: pCube3
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
