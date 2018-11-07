@@ -19,8 +19,8 @@ public class Holding : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.E)&&currentPowerUp!=null){
+			currentPowerUp.transform.localPosition=new Vector3(2,currentPowerUp.transform.localPosition.y,currentPowerUp.transform.localPosition.z);
 			currentPowerUp.transform.parent=null;
-			currentPowerUp.transform.position=new Vector3(currentPowerUp.transform.position.x+1,currentPowerUp.transform.position.y,currentPowerUp.transform.position.z);
 			currentPowerUp=null;
 		}
 		
