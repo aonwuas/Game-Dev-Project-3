@@ -12,6 +12,7 @@ public class Holding : MonoBehaviour {
 	private GameObject currentPowerUp;
 	private Vector3 knockback;
 	private Rigidbody rb;
+	private Rigidbody powerRb;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +21,16 @@ public class Holding : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(currentPowerUp!=null){
+			currentPowerUp.transform.position=holder.transform.position;
+		}
 		if(Input.GetKeyDown(KeyCode.E)&&currentPowerUp!=null){
 			currentPowerUp.transform.localPosition=new Vector3(2,currentPowerUp.transform.localPosition.y,currentPowerUp.transform.localPosition.z);
 			currentPowerUp.transform.parent=null;
+			if(powerRb!=null){
+				powerRb.detectCollisions=true;
+				powerRb=null;
+			}
 			currentPowerUp=null;
 		}
 		if(health<=0){
@@ -37,6 +45,10 @@ public class Holding : MonoBehaviour {
 			col.gameObject.transform.position=holder.transform.position;
 			col.gameObject.transform.parent=transform;
 			currentPowerUp=col.gameObject;
+			powerRb=currentPowerUp.GetComponent<Rigidbody>();
+			if(powerRb!=null){
+				 powerRb.detectCollisions = false;
+			}
 		}
 		if(col.gameObject.tag=="Hand"){
 			knockback=transform.position-col.gameObject.transform.position;
