@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4817259713042418}
   - component: {fileID: 54295349067245434}
   - component: {fileID: 114388855718091410}
-  - component: {fileID: 65859986512470456}
+  - component: {fileID: 135130158029100524}
   m_Layer: 0
   m_Name: RealScube
   m_TagString: Cube
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4785912475858662}
   - component: {fileID: 33586050167758788}
   - component: {fileID: 23347242504341418}
-  - component: {fileID: 135094718830413506}
+  - component: {fileID: 65964736092738786}
   m_Layer: 0
   m_Name: Sugar Cube
   m_TagString: Untagged
@@ -89,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1c7a9ac16685d5042b403e3ff2a8388e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,12 +131,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65859986512470456
+--- !u!65 &65964736092738786
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1074962689576102}
+  m_GameObject: {fileID: 1595156851604918}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -154,15 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb0156bcdab40a458e5cdfdfb088803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135094718830413506
+--- !u!135 &135130158029100524
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1595156851604918}
+  m_GameObject: {fileID: 1074962689576102}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}

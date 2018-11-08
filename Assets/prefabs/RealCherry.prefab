@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114985191013568686}
   - component: {fileID: 54036282921029430}
   m_Layer: 0
-  m_Name: Cherry
+  m_Name: RealCherry
   m_TagString: Cherry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
