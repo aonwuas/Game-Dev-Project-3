@@ -6,7 +6,7 @@ public class Pickable : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        GetComponent<Rigidbody>().freezeRotation = true;
 	}
 	
 	// Update is called once per frame
