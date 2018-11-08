@@ -44,7 +44,7 @@ public class Holding : MonoBehaviour {
 			currentPowerUp=null;
 		}
 		else if(Input.GetKeyDown(KeyCode.E) && canPickUp){
-			objectToPick.transform.position=holder.transform.position + 2f*holder.transform.forward;
+			objectToPick.transform.position=holder.transform.position + 2f * (holder.transform.forward + 5*holder.transform.up);
 			objectToPick.transform.parent=transform;
 			currentPowerUp=objectToPick;
 			objectToPick=null;
