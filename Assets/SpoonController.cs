@@ -7,7 +7,7 @@ public class SpoonController : MonoBehaviour {
     private Vector3 facing;
     private ProjectileController proj;
     private GameObject loadingZone;
-    private float threshhold = 10f; //angle tolerance between girl and catapult direction
+    private float threshhold = 1000f; //angle tolerance between girl and catapult direction
     private float velocity_multiplier = 5f;
 	// Use this for initialization
 	void Start () {
@@ -34,8 +34,6 @@ public class SpoonController : MonoBehaviour {
                 proj = projectile.GetComponent<ProjectileController>();
                 proj.Release();
                 projectile.GetComponent<Rigidbody>().velocity = velocity_multiplier * (relative_direction.normalized + (2f * Vector3.up));
-                
-                Debug.Log("Launched projectile towards" + relative_direction);
             }
             else {
                 Debug.Log("Error! No projectile loaded!");
@@ -58,7 +56,6 @@ public class SpoonController : MonoBehaviour {
 
     bool is_facing(Vector3 v1, Vector3 v2, float tolerance) {
         float relative_angle = Vector3.SignedAngle(v1, v2, Vector3.up);
-        // return Mathf.Abs(relative_angle) <= tolerance
-        return true;
+        return Mathf.Abs(relative_angle) <= tolerance;
     }
 }
