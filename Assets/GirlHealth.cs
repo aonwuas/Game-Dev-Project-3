@@ -26,4 +26,7 @@ public class GirlHealth : MonoBehaviour {
 			health-=1;
 		}
 	}
+	public int getHealth(){
+		return health;
+	}
 }

@@ -108,4 +108,7 @@ public class Holding : MonoBehaviour {
 			}
 		}*/
 	}
+	public int getHeath(){
+		return health;
+	}
 }
