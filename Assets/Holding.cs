@@ -23,29 +23,9 @@ public class Holding : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*
-        Debug.Log("REE");
-        if(Input.GetKeyDown(KeyCode.E)) {
-            Debug.Log("pressed E");
-            if(canPickUp && objectToPick && !currentPowerUp) {
-                Debug.Log("Attempting to pick up");
-                objectToPick.transform.position = holder.transform.position;
-                objectToPick.transform.parent = transform;
-                currentPowerUp = objectToPick;
-                objectToPick = null;
-                canPickUp = false;
-                currentPowerUp.transform.localEulerAngles = Vector3.zero;
-                powerRb = currentPowerUp.GetComponent<Rigidbody>();
-                if (powerRb != null)
-                {
-                    powerRb.detectCollisions = false;
-                }
-            }
-        }
-        */
         
 		if(currentPowerUp!=null){
-			currentPowerUp.transform.position=holder.transform.position;
+			currentPowerUp.transform.position=holder.transform.position + holder.transform.forward;
 		}
 
 		if(Input.GetKeyDown(KeyCode.E) && currentPowerUp){
