@@ -41,6 +41,7 @@ public class PlayerState : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("you died, rip");
+            Time.timeScale=0.0f;
         }
 
 
