@@ -29,16 +29,35 @@ public class FistController : MonoBehaviour {
         target.y = table.transform.position.y;
         transform.position = target + new Vector3(0, 20, 0);
         shadow.enabled = true;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         body.velocity = new Vector3(0, -50f, 0);
+        
     }
 
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator Lift() {
+        yield return new WaitForSeconds(2);
+        body.velocity = new Vector3(0, 10, 0);
+        StartCoroutine(Pause());
+    }
+
+    IEnumerator Pause() {
+        yield return new WaitForSeconds(4);
+        body.velocity = Vector3.zero;
+        StartCoroutine(Smash());
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Ground") {
+        if(other.gameObject.name == "Table") {
             body.velocity = Vector3.zero;
             shadow.enabled = false;
+            Shockwave();
+            StartCoroutine(Lift());
         }
+    }
+
+    private void Shockwave() {
+        player.GetComponent<PlayerState>().KnockBack(gameObject);
     }
     
 }
