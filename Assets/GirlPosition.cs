@@ -30,6 +30,7 @@ public class GirlPosition : MonoBehaviour {
 		transform.LookAt(player.transform);
 		rot=transform.eulerAngles;
 		rot.x=0;
+        rot.y -= 90;
 		transform.eulerAngles=rot;
 		
 	}
