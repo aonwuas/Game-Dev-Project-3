@@ -21,6 +21,7 @@ public class Holding : MonoBehaviour {
 
     public void pickUp(Vector3? holdPosition = null) {
         heldItem = objectToPick;
+        heldItem.GetComponent<Pickable>().pick(this.gameObject);
         if(holdPosition == null) {
             holdPosition = Vector3.zero;
         }
@@ -58,6 +59,7 @@ public class Holding : MonoBehaviour {
             itemRb.detectCollisions = true;
             //itemRb = null;
         }
+        heldItem.GetComponent<Pickable>().release();
         heldItem = null;
         isHolding = false;
     }

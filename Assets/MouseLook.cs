@@ -29,7 +29,7 @@ public class MouseLook : MonoBehaviour {
         
         offset.y = Mathf.Max(0.2f, offset.y); //prevent from falling through floor.
         transform.position = player.position + offset;
-        
+            
 		//this bounds y to between minY and maxY
 		//transform.position=new Vector3(transform.position.x,transform.position.y,transform.position.z); 
         transform.LookAt(player.position);

@@ -25,7 +25,7 @@ public class PlayerState : MonoBehaviour
     {
 
         if(holding.isHolding) {
-            holding.updatePosition(transform.position + transform.forward);
+            holding.updatePosition(transform.position + transform.forward + transform.up * 1.5f);
         }
 
         if (Input.GetKeyDown(KeyCode.E) && holding.isHolding)
@@ -45,24 +45,12 @@ public class PlayerState : MonoBehaviour
 
 
     }
-
-    /*void OnCollisionEnter(Collision col)
-    {
-
-        if (col.gameObject.tag == "Hand")
-        {
-            knockback = transform.position - col.gameObject.transform.position;
-            knockback.y = 0;
-            health--;
-            if (knockback == Vector3.zero)
-            {
-                knockback.x = 1;
-            }
-            knockback = knockback.normalized;
-            rb.AddForce(knockback * knockbackFactor);
-        }
-
-    }*/
+    
+    public void ForceRelease() {
+       if(holding.isHolding) {
+            holding.releaseItem(Vector3.zero);
+       }
+    }
 
     public void KnockBack(GameObject hand) {
         if (GetComponent<PlayerMovement>().IsGrounded())

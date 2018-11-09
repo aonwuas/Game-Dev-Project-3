@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour {
 
-    bool inLoading = false;
     public bool pickable;
+    GameObject holder;
 	// Use this for initialization
 	void Start () {
         GetComponent<Rigidbody>().freezeRotation = true;
@@ -16,23 +16,31 @@ public class Pickable : MonoBehaviour {
 		
 	}
 
-    public void release(GameObject holder) {
-        
+    public void release() {
+        holder = null;
     }
 
+    public void pick(GameObject newHolder) {
+        holder = newHolder;
+    }
+
+    public bool canPick() {
+        return holder == null;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if(!inLoading) { //not on catapult
+        if(!holder) { //not currently held
             if (other.tag == "Player")
             {
                 other.gameObject.GetComponent<Holding>().ToggleHoldable(gameObject, true);
             }
-            if(other.tag == "LoadingZone") {
-                other.gameObject.GetComponent<Holding>().ToggleHoldable(gameObject, true);
-                inLoading = true;
-            }
         }
         
+    }
+
+    public void FastenToLauncher(Holding launcher) {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>().ForceRelease();
+        UpdateItemPosition(launcher.transform.position);
     }
 
     public void UpdateItemPosition(Vector3 position)
