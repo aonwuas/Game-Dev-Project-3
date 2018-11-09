@@ -46,7 +46,7 @@ public class PlayerState : MonoBehaviour
 
     }
 
-    /*void OnCollisionEnter(Collision col)
+    void OnCollisionEnter(Collision col)
     {
 
         if (col.gameObject.tag == "Hand")
@@ -62,9 +62,9 @@ public class PlayerState : MonoBehaviour
             rb.AddForce(knockback * knockbackFactor);
         }
 
-    }*/
+    }
 
-    public void KnockBack(GameObject hand) {
+   /* public void KnockBack(GameObject hand) {
         if (GetComponent<PlayerMovement>().IsGrounded())
         {
             Vector3 handPos = hand.transform.position;
@@ -82,7 +82,7 @@ public class PlayerState : MonoBehaviour
             knockback = knockback.normalized;
             rb.velocity = (knockback * knockbackFactor);
         }
-    }
+    }*/
 
     public int getHeath()
     {
