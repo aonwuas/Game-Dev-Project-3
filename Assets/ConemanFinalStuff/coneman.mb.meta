@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9806c1359d451114088e634b34083203
+guid: cbe6b5f243b100141bae9eab646f4df3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -565,6 +565,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
