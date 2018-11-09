@@ -16,6 +16,7 @@ public class GirlHealth : MonoBehaviour {
 	void Update () {
 		if(health==0){
 			Debug.Log("the girl is dead");
+			Time.timeScale=0.0f;
 			//change scene here(?)
 		}
 	}
