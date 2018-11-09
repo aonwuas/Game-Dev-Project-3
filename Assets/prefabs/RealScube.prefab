@@ -151,10 +151,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1074962689576102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb0156bcdab40a458e5cdfdfb088803, type: 3}
+  m_Script: {fileID: 11500000, guid: 73ebee3c9e0e7184992a292fae89832d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickable: 0
+  pickable: 1
 --- !u!135 &135130158029100524
 SphereCollider:
   m_ObjectHideFlags: 1
