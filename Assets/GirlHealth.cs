@@ -22,9 +22,13 @@ public class GirlHealth : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag=="Cherry"){
+        Pickable p = other.gameObject.GetComponent<Pickable>();
+        if(p) {
+            health -= 1;
+        }
+		/*if(other.gameObject.tag=="Cherry"){
 			health-=1;
-		}
+		}*/
 	}
 	public int getHealth(){
 		return health;

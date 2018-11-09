@@ -347,6 +347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickable: 0
+  holder: {fileID: 0}
+  launched: 0
 --- !u!135 &135074283843963614
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -56,4 +56,5 @@ public class Pickable : MonoBehaviour {
             other.gameObject.GetComponent<Holding>().ToggleHoldable(gameObject, false);
         }
     }
+    
 }
