@@ -57,7 +57,7 @@ public class FistController : MonoBehaviour {
     }
 
     private void Shockwave() {
-        player.GetComponent<PlayerState>().KnockBack(gameObject);
+        //player.GetComponent<PlayerState>().KnockBack(gameObject);
     }
     
 }
