@@ -5,7 +5,8 @@ using UnityEngine;
 public class Pickable : MonoBehaviour {
 
     public bool pickable;
-    GameObject holder;
+    public GameObject holder;
+    public bool launched= false;
 	// Use this for initialization
 	void Start () {
         GetComponent<Rigidbody>().freezeRotation = true;
@@ -13,10 +14,15 @@ public class Pickable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(launched && holder == null) {
+            Debug.Log("launching!:");
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 10f);
+            launched = false;
+        }
 	}
 
     public void release() {
+        transform.parent = null;
         holder = null;
     }
 

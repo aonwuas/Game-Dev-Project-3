@@ -50,9 +50,22 @@ public class Holding : MonoBehaviour {
         heldItem.transform.position = position;
     }
 
-    public void releaseItem(Vector3 direction) {
+    public void Launch() {
+        GameObject temp = heldItem;
+        releaseItem();
+        //first is horizontal velocity, second is vertical
+        Vector3 velocity = (transform.up * -20f) + (transform.forward * 10f);
+        temp.GetComponent<Rigidbody>().velocity = velocity;
+        
+        
+    }
+
+    public void releaseItem(Vector3? direction = null) {
         heldItem.transform.parent = null;
-        heldItem.transform.position = transform.position + direction;
+        if(direction != null) {
+            heldItem.transform.position = transform.position + (Vector3)direction;
+        }
+        
         Rigidbody itemRb = heldItem.GetComponent<Rigidbody>();
         if(itemRb) {
             itemRb.velocity = Vector3.zero;
