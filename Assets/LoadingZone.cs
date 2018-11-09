@@ -27,5 +27,8 @@ public class LoadingZone : MonoBehaviour {
         }
     }
 
+    private void Fire() {
+    }
+
     
 }

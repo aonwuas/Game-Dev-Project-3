@@ -25,7 +25,7 @@ public class PlayerState : MonoBehaviour
     {
 
         if(holding.isHolding) {
-            holding.updatePosition(transform.position + transform.forward);
+            holding.updatePosition(transform.position + transform.forward + transform.up);
         }
 
         if (Input.GetKeyDown(KeyCode.E) && holding.isHolding)

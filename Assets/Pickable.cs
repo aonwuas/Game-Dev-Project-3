@@ -37,11 +37,7 @@ public class Pickable : MonoBehaviour {
         }
         
     }
-
-    public void FastenToLauncher(Holding launcher) {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>().ForceRelease();
-        UpdateItemPosition(launcher.transform.position);
-    }
+    
 
     public void UpdateItemPosition(Vector3 position)
     {

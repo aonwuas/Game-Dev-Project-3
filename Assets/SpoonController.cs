@@ -24,5 +24,6 @@ public class SpoonController : MonoBehaviour {
             holder.pickUp(transform.position);
         }
     }
+    
 
 }
