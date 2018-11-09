@@ -7,7 +7,7 @@ public class UImanager : MonoBehaviour {
 	[SerializeField]
 	private Text playerHealth;
 	[SerializeField]
-	private Holding hold;
+	private PlayerState playerState;
 	[SerializeField]
 	private Text girlHealth;
 	[SerializeField]
@@ -20,7 +20,7 @@ public class UImanager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		playerHealth.text="Player: "+hold.getHeath();
+		playerHealth.text="Player: "+playerState.getHeath();
 		girlHealth.text="Girl: "+girl.getHealth();
 	}
 }

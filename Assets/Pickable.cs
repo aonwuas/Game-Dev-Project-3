@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickable : MonoBehaviour {
 
     bool inLoading = false;
+    public bool pickable;
 	// Use this for initialization
 	void Start () {
         GetComponent<Rigidbody>().freezeRotation = true;
@@ -24,18 +25,25 @@ public class Pickable : MonoBehaviour {
         if(!inLoading) { //not on catapult
             if (other.tag == "Player")
             {
-                other.gameObject.GetComponent<Holding>().MakeHoldable(gameObject, true);
+                other.gameObject.GetComponent<Holding>().ToggleHoldable(gameObject, true);
             }
             if(other.tag == "LoadingZone") {
-                other.gameObject.GetComponent<Holding>().MakeHoldable(gameObject, true);
+                other.gameObject.GetComponent<Holding>().ToggleHoldable(gameObject, true);
+                inLoading = true;
             }
         }
         
     }
+
+    public void UpdateItemPosition(Vector3 position)
+    {
+        transform.position = position;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player") {
-            other.gameObject.GetComponent<Holding>().MakeHoldable(gameObject, false);
+            other.gameObject.GetComponent<Holding>().ToggleHoldable(gameObject, false);
         }
     }
 }

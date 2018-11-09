@@ -4,69 +4,68 @@ using UnityEngine;
 
 public class Holding : MonoBehaviour {
 	[SerializeField]
-	private GameObject holder;
-	[SerializeField]
-	private float knockbackFactor;
-	[SerializeField]
-	private int health=3;
-	private GameObject currentPowerUp;
-	private Vector3 knockback;
-	private Rigidbody rb;
-	private Rigidbody powerRb;
-	private bool canPickUp=false;
-	private GameObject objectToPick;
-
+	private GameObject heldItem;
+	private Rigidbody itemRb;
+    private GameObject objectToPick;
+    public bool canPickUp = false;
+    public bool isHolding = false;
 	// Use this for initialization
 	void Start () {
-			rb=GetComponent<Rigidbody>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
         
-		if(currentPowerUp!=null){
-			currentPowerUp.transform.position=holder.transform.position + holder.transform.forward;
-		}
-
-		if(Input.GetKeyDown(KeyCode.E) && currentPowerUp){
-            //drop
-            Vector3 camDirection = Camera.main.transform.forward;
-
-            //currentPowerUp.transform.localPosition=new Vector3(2,currentPowerUp.transform.localPosition.y,currentPowerUp.transform.localPosition.z);
-            currentPowerUp.transform.parent=null;
-            currentPowerUp.transform.position = transform.position + camDirection;
-			if(powerRb!=null)
-            {
-                powerRb.velocity = Vector3.zero;
-                powerRb.detectCollisions=true;
-				powerRb=null;
-			}
-			currentPowerUp=null;
-		}
-		else if(Input.GetKeyDown(KeyCode.E) && canPickUp){
-			objectToPick.transform.position=holder.transform.position + 2f * (holder.transform.forward + 5*holder.transform.up);
-			objectToPick.transform.parent=transform;
-			currentPowerUp=objectToPick;
-			objectToPick=null;
-			canPickUp=false;
-			currentPowerUp.transform.localEulerAngles=Vector3.zero;
-			powerRb=currentPowerUp.GetComponent<Rigidbody>();
-			if(powerRb!=null){
-				 powerRb.detectCollisions = false;
-			}
-
-		}
-        
-		if(health<=0){
-			Debug.Log("you died, rip");
-		}
-        
-		
 	}
 
-    public void MakeHoldable(GameObject obj, bool make) {
-        if(make) {
-            if(!currentPowerUp && !objectToPick){
+    public void pickUp(Vector3? holdPosition = null) {
+        heldItem = objectToPick;
+        if(holdPosition == null) {
+            holdPosition = Vector3.zero;
+        }
+        updatePosition((Vector3) holdPosition);
+        heldItem.transform.parent = transform;
+        objectToPick = null;
+        canPickUp = false;
+        heldItem.transform.localEulerAngles = Vector3.zero;
+        itemRb = heldItem.GetComponent<Rigidbody>();
+        if (itemRb != null)
+        {
+            itemRb.detectCollisions = false;
+        }
+        isHolding = true;
+    }
+
+    public void HoldingReset() {
+        canPickUp = false;
+        isHolding = false;
+        heldItem = null;
+        itemRb = null;
+        objectToPick = null;
+    }
+
+    public void updatePosition(Vector3 position) {
+        heldItem.transform.position = position;
+    }
+
+    public void releaseItem(Vector3 direction) {
+        heldItem.transform.parent = null;
+        heldItem.transform.position = transform.position + direction;
+        Rigidbody itemRb = heldItem.GetComponent<Rigidbody>();
+        if(itemRb) {
+            itemRb.velocity = Vector3.zero;
+            itemRb.detectCollisions = true;
+            //itemRb = null;
+        }
+        heldItem = null;
+        isHolding = false;
+    }
+    
+
+    public void ToggleHoldable(GameObject obj, bool hold) {
+        if(hold) {
+            if(!heldItem && !objectToPick){
                 objectToPick = obj;
                 canPickUp = true;
             }
@@ -78,37 +77,4 @@ public class Holding : MonoBehaviour {
             }
         }
     }
-
-	void OnCollisionEnter(Collision col)
-	{
-        
-		/*if(col.gameObject.tag=="Cherry"&&currentPowerUp==null){
-            Debug.Log("collision cherry");
-            canPickUp =true;
-			objectToPick=col.gameObject;
-		}*/
-		if(col.gameObject.tag=="Hand"){
-			knockback=transform.position-col.gameObject.transform.position;
-			knockback.y=0;
-			health--;
-			if(knockback==Vector3.zero){
-				knockback.x=1;
-			}
-			knockback=knockback.normalized;
-			rb.AddForce(knockback*knockbackFactor);
-		}
-		
-	}
-	void OnCollisionExit(Collision col)
-	{
-		/*if(col.gameObject.tag=="Cherry"){
-			canPickUp=false;
-			if(objectToPick!=null){
-				objectToPick=null;
-			}
-		}*/
-	}
-	public int getHeath(){
-		return health;
-	}
 }

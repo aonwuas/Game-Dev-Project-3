@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33586050167758788}
   - component: {fileID: 23347242504341418}
   - component: {fileID: 65964736092738786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sugar Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb0156bcdab40a458e5cdfdfb088803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickable: 0
 --- !u!135 &135130158029100524
 SphereCollider:
   m_ObjectHideFlags: 1
